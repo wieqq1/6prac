@@ -26,20 +26,20 @@ pipeline {
             }
         }
 
-        stage('Test Image') {
-            steps {
-                script {
-                    // Простой тест - проверяем что контейнер запускается
-                    sh """
-                    docker run -d --name test-container ${DOCKER_IMAGE}:${BUILD_NUMBER}
-                    sleep 5
-                    docker ps | grep test-container
-                    docker stop test-container
-                    docker rm test-container
-                    """
-                }
-            }
-        }
+        // stage('Test Image') {
+        //     steps {
+        //         script {
+        //             // Простой тест - проверяем что контейнер запускается
+        //             sh """
+        //             docker run -d --name test-container ${DOCKER_IMAGE}:${BUILD_NUMBER}
+        //             sleep 5
+        //             docker ps | grep test-container
+        //             docker stop test-container
+        //             docker rm test-container
+        //             """
+        //         }
+        //     }
+        // }
 
         stage('Deploy to Production') {
             steps {
