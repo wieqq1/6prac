@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'wie1q/my-simple-app'
+        DOCKER_IMAGE = 'wieq1/my-simple-app'
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
     }
 
